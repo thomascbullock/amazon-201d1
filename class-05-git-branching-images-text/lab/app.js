@@ -50,8 +50,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
-
+    var result = parseInt(a) * parseInt(b);
+    var resultStr = "The product of " + a + " and " + b + " is " + result + ".";
+    return [result, resultStr];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
