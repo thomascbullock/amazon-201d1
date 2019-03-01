@@ -29,7 +29,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+    var result = parseInt(a) * parseInt(b);
+    var resultStr = "The product of " + a + " and " + b + " is " + result + ".";
+    return [result, resultStr];
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -50,9 +52,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    var result = parseInt(a) * parseInt(b);
-    var resultStr = "The product of " + a + " and " + b + " is " + result + ".";
-    return [result, resultStr];
+    var sumResult = sum(sum(a,b)[0],c)[0];
+    
+    var multiplyResult =  multiply(multiply(a,b)[0],c)[0];
+
+    var sumStr = a + " and " + b + " and " + c + " sum to " + sumResult + ".";
+
+    var multiplyStr = "The product of " + a + " and " + b + " and " + c + " is " + multiplyResult + ".";
+    
+    return [sumResult, multiplyResult, sumStr, multiplyStr];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
